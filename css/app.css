@@ -1,1 +1,13 @@
-#
+body {
+    background-color: #080A50;
+}
+
+h1, h2, p {
+    color: green;
+    font-family: 'Roboto', cursive;
+}
+
+.image {
+    border-radius: 8%;
+    border-style: groove;
+}
