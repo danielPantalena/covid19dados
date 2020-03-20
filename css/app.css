@@ -1,13 +1,18 @@
 body {
-    background-color: #080A50;
+    background-color: #071A33;
 }
 
 h1, h2, p {
-    color: green;
+    color: #6FF06B;
     font-family: 'Roboto', cursive;
 }
 
 .image {
     border-radius: 8%;
     border-style: groove;
+}
+
+.link {
+    color: #6FF06B;
+    font-family: 'Roboto', cursive;
 }
