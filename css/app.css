@@ -1,18 +1,31 @@
 body {
-    background-color: #071A33;
+    background-color: #EAE7DC;
 }
 
-h1, h2, p {
-    color: #6FF06B;
-    font-family: 'Roboto', cursive;
+h1 {
+    color: #E85A4f;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 150;
+    margin-left: 7%;
+}
+
+h2, p {
+    color: #E85A4f;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 150;
+    text-align: center;
+}
+
+#update {
+    text-align: right;
+
 }
 
 .image {
-    border-radius: 8%;
-    border-style: groove;
+    border-radius: 2%;
 }
 
 .link {
-    color: #6FF06B;
-    font-family: 'Roboto', cursive;
+    color: #E98074;
+    font-family: 'Baloo 2', cursive;
 }
