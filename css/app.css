@@ -4,18 +4,19 @@ body {
 
 #head {
     background-color: rgb(177, 27, 17);
-    padding: 5%;
+    padding: 12px;
     width: 100%;
     text-align: left;
     font-family: 'Baloo 2', cursive;
     color: #EAE7DC;
 }
 
-#covid19 {
-    font-weight: 700;
-    font-size: 120%;
-    color: #EAE7DC;
+#covid19dados {
+    font-size: 150%;
+    color: rgb(177, 27, 17);
     text-align: left;
+    text-shadow: -0.5px 0.5px 1px rgb(77, 9, 4),
+        -1px 1px 1px rgb(77, 9, 4);
 }
 
 .links {
@@ -40,8 +41,14 @@ p {
 }
 
 .image {
+    margin-top: 30px;
     border-radius: 2%;
     margin-left: 10%;
+    width: 80%;
+}
+
+a {
+    color: rgb(202, 86, 77)
 }
 
 #bandeira-brasil {
