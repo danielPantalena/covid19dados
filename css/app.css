@@ -4,7 +4,7 @@ body {
 
 #head {
     background-color: rgb(177, 27, 17);
-    padding: 0.5em;
+    padding: 25px;
     width: 100%;
     text-align: left;
     font-family: 'Baloo 2', cursive;
@@ -30,19 +30,37 @@ h1 {
     font-size: 70px;
 }
 
-
-
-
 #update {
     text-align: right;
+    color: #EAE7DC;
+    padding-left: 7%;
 
 }
 
 .image {
     border-radius: 2%;
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-.link {
-    color: #E98074;
+.links {
+    color: #EAE7DC;
     font-family: 'Baloo 2', cursive;
+    padding-left: 5%;
+}
+
+#bandeira-brasil {
+    width: 22px;
+    margin-left: 20px;
+}
+
+.big-numbers {
+    font-size: 50px;
+    margin-top: -50px;
+    margin-bottom: -50px;
+}
+
+.curados {
+    color: rgb(36, 161, 5);
 }
