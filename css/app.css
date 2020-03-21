@@ -12,8 +12,8 @@ body {
 }
 
 #covid19 {
-    font-weight: 500;
-    font-size: 100%;
+    font-weight: 700;
+    font-size: 120%;
     color: #EAE7DC;
     text-align: left;
 }
@@ -22,12 +22,12 @@ body {
     color: #EAE7DC;
     font-family: 'Baloo 2', cursive;
     padding-left: 2%;
-    font-size: 80%;
+    font-size: 100%;
 }
 
 #update {
+    color: rgb(177, 27, 17);
     text-align: right;
-    color: #EAE7DC;
     padding-left: 2%;
     font-size: 50%;
 
