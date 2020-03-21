@@ -2,19 +2,36 @@ body {
     background-color: #EAE7DC;
 }
 
-h1 {
-    color: #E85A4f;
+#head {
+    background-color: rgb(177, 27, 17);
+    padding: 0.5em;
+    width: 100%;
+    text-align: left;
     font-family: 'Baloo 2', cursive;
-    font-weight: 150;
-    margin-left: 7%;
+    color: #EAE7DC;
 }
 
-h2, p {
-    color: #E85A4f;
+#covid19 {
+    margin-left: 5%;
+    font-weight: 900;
+    font-size: 150%;
+    color: #EAE7DC;
+    text-align: left;
+}
+
+h1, p {
+    color: rgb(177, 27, 17);
     font-family: 'Baloo 2', cursive;
     font-weight: 150;
     text-align: center;
 }
+
+h1 {
+    font-size: 70px;
+}
+
+
+
 
 #update {
     text-align: right;
