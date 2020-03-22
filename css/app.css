@@ -2,7 +2,9 @@ body {
     background-color: #EAE7DC;
 }
 
-#head {
+#header {
+    margin-top: -10px;
+    margin-left: -10px;
     background-color: rgb(177, 27, 17);
     padding: 12px;
     width: 100%;
@@ -12,11 +14,13 @@ body {
 }
 
 #covid19dados {
+    border: none;
+    display: inline-block;
     font-size: 150%;
-    color: rgb(177, 27, 17);
+    color: #EAE7DC;
     text-align: left;
-    text-shadow: -0.5px 0.5px 1px rgb(77, 9, 4),
-        -1px 1px 1px rgb(77, 9, 4);
+    text-shadow: -0.5px 0.5px 1px rgba(234, 231, 220, 0.767),
+        -1px 1px 1px rgb(234, 231, 220, 0.767);
 }
 
 .links {
@@ -30,7 +34,6 @@ body {
     color: rgb(177, 27, 17);
     text-align: right;
     padding-left: 2%;
-    font-size: 70%;
 }
 
 p {
@@ -50,15 +53,21 @@ a {
     color: rgb(202, 86, 77)
 }
 
+#brasil {
+    margin-top: -10px;
+    font-size: 200%;
+    margin-bottom: -15px;
+}
+
 #bandeira-brasil {
-    width: 22px;
-    margin-left: 20px;
+    width: 40px;
+    margin-right: 10px;
 }
 
 .big-numbers {
     font-size: 50px;
-    margin-top: -50px;
-    margin-bottom: -50px;
+    margin-top: -60px;
+    margin-bottom: -60px;
 }
 
 .curados {
