@@ -1,18 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+}
 body {
     background-color: #EAE7DC;
 }
-
 #head {
-    margin-top: -11px;
-    margin-left: -10px;
     background-color: rgb(177, 27, 17);
-    padding: 12px;
     width: 100%;
+    height: 70px;
     text-align: left;
     font-family: 'Baloo 2', cursive;
     color: #EAE7DC;
 }
-
 #covid19dados {
     border: none;
     display: inline-block;
@@ -22,54 +23,60 @@ body {
     text-shadow: -0.5px 0.5px 1px rgba(234, 231, 220, 0.767),
         -1px 1px 1px rgb(234, 231, 220, 0.767);
 }
-
 .links {
     color: #EAE7DC;
     font-family: 'Baloo 2', cursive;
-    padding-left: 2%;
     font-size: 100%;
 }
-
 #update {
     color: rgb(177, 27, 17);
     text-align: right;
-    padding-left: 2%;
 }
-
+#brasil {
+    font-size: 200%;
+    margin-left: 15%;
+}
+#bandeira-brasil {
+    width: 40px;
+    margin-left: 10px;
+}
+#big-numbers {
+    float: left;
+    width: 30%;
+}
+.numbers-box {
+    border: 1px groove rgb(177, 27, 17);
+    border-radius: 10%;
+    width: 200px;
+    margin-left: 20%;
+    box-shadow: -2px 2px 2px 1px rgb(177, 27, 17);
+}
+#big-numbers div h1 {
+    align-content: right;
+    text-align: right;
+    margin-right: 20%;
+    color:rgb(177, 27, 17);
+}
+#curve_chart {
+    float: right;
+    width: fit-content;
+    margin-top: 5%;
+    margin-right: 20%;
+    box-shadow: -5px 5px 10px 1px rgb(177, 27, 17);
+}
 p {
     color: rgb(177, 27, 17);
     font-family: 'Baloo 2', cursive;
     text-align: center;
 }
-
 .image {
     margin-top: 30px;
     border-radius: 2%;
-    margin-left: 10%;
     width: 80%;
 }
-
 a {
     color: rgb(202, 86, 77)
 }
-
-#brasil {
-    margin-top: -10px;
-    font-size: 200%;
-    margin-bottom: -15px;
-}
-
-#bandeira-brasil {
-    width: 40px;
-    margin-right: 10px;
-}
-
-.big-numbers {
-    font-size: 50px;
-    margin-top: -60px;
-    margin-bottom: -60px;
-}
-
 .curados {
     color: rgb(36, 161, 5);
 }

@@ -6,6 +6,57 @@
     <title>covid19dados</title>
     <link rel="stylesheet" href="css/app.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <!-- Chart -->
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Day', 'Casos', 'Mortes'],
+          ['26/fev', 1, null],
+          ['27/fev', 1, null],
+          ['28/fev', 1, null],
+          ['29/fev', 2, null],
+          ['01/mar', 2, null],
+          ['02/mar', 2, null],
+          ['03/mar', 2, null],
+          ['04/mar', 3, null],
+          ['05/mar', 8, null],
+          ['06/mar', 13, null],
+          ['07/mar', 25, null],
+          ['08/mar', 25, null],
+          ['09/mar', 25, null],
+          ['10/mar', 34, null],
+          ['11/mar', 52, null],
+          ['12/mar', 77, null],
+          ['13/mar', 98, null],
+          ['14/mar', 98, null],
+          ['15/mar', 98, null],
+          ['16/mar', 234, null],
+          ['17/mar', 291, 1],
+          ['18/mar', 428, 4],
+          ['19/mar', 621, 7],
+          ['20/mar', 978, 11],
+          ['21/mar', 1128, 18],
+          ['22/mar', 1546, 25],
+          ['23/mar', 1891, 34],  
+        ]);
+
+        var options = {
+          title: 'Hitórico no Brasil',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 
 </head>
 <body>
@@ -26,31 +77,35 @@
                         Dados</a>   
         </nav>
     </header>
-    
+
     <p id="update">atualizado em: 22/03/2020 as 11:00</p>
 
-    <p id="brasil"><img id="bandeira-brasil" src="img/brasilian_flag.png">Brasil</p>
+    <!-- big-numbers -->
+    <div id="big-numbers">
+        <h2 id="brasil"><img id="bandeira-brasil" src="img/brasilian_flag.png">Brasil</h2>
 
-    <p>Total de casos</p>
-    <div class="big-numbers"><p>1.546</p></div>
+        <div id="cases" class="numbers-box">
+            <p>Total de casos</p>
+            <h1>1.891</h1>
+        </div>
 
-    <p>Mortes</p>
-    <div class="big-numbers"><p>25</p></div>
+        <div id="deaths" class="numbers-box">
+            <p>Mortes</p>
+            <h1>34</h1>
+        </div>
 
-    <p class="curados">Curados</p>
-    <div class="big-numbers"><p class="curados">2</p></div>
+        <div id="deaths" class="numbers-box">
+            <p>Mortes</p>
+            <h1>34</h1>
+        </div>
+ 
+    </div>
+
+    <!-- Chart -->
+    <div id="curve_chart"></div>
+
+    <footer>
+    </footer>
     
-    <img class="image" src="img/covid19-21-03.png">
-    
-    <p>fonte: <a href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/21/
-        casos-de-coronavirus-no-brasil-em-21-de-marco.ghtml" >G1 globo.com</a></em></p>
-    
-    <img class="image" src="img/brasilprojection.png">
-    <p>fonte: <a href="https://www.who.int/">WHO.int</a></p>
-
-    <img class="image" src="img/delayepidemicpeak.jpg">
-    <p>Gráfico elaborado pelo cientista Drew Harris e adaptado pelo biólogo Carl Bergstrom 
-        mostra como medidas de prevenção podem retardar o contágio da Covid-19 e evitar o 
-        colapso do sistema de saúde — Foto: Carl Bergstrom e Esther Kim/CC BY 2.0<p>
 </body>
 </html>
