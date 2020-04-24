@@ -1,75 +1,26 @@
-body {
-    background-color: #EAE7DC;
-}
-
-#head {
-    margin-top: -11px;
-    margin-left: -10px;
-    background-color: rgb(177, 27, 17);
-    padding: 12px;
-    width: 100%;
-    text-align: left;
+* {
+    margin: 0;
+    padding: 0;
     font-family: 'Baloo 2', cursive;
-    color: #EAE7DC;
 }
 
-#covid19dados {
-    border: none;
-    display: inline-block;
-    font-size: 150%;
-    color: #EAE7DC;
-    text-align: left;
-    text-shadow: -0.5px 0.5px 1px rgba(234, 231, 220, 0.767),
-        -1px 1px 1px rgb(234, 231, 220, 0.767);
+header nav {
+    padding: 0px 20px;
 }
 
-.links {
-    color: #EAE7DC;
-    font-family: 'Baloo 2', cursive;
-    padding-left: 2%;
-    font-size: 100%;
+ul li a {
+    display: flex;
 }
 
-#update {
-    color: rgb(177, 27, 17);
-    text-align: right;
-    padding-left: 2%;
+a.brand-logo {
+    font-size: 2em;
+    font-weight: 900;
 }
 
-p {
-    color: rgb(177, 27, 17);
-    font-family: 'Baloo 2', cursive;
-    text-align: center;
-}
-
-.image {
-    margin-top: 30px;
-    border-radius: 2%;
-    margin-left: 10%;
-    width: 80%;
-}
-
-a {
-    color: rgb(202, 86, 77)
-}
-
-#brasil {
-    margin-top: -10px;
-    font-size: 200%;
-    margin-bottom: -15px;
-}
-
-#bandeira-brasil {
-    width: 40px;
-    margin-right: 10px;
-}
-
-.big-numbers {
-    font-size: 50px;
-    margin-top: -60px;
-    margin-bottom: -60px;
-}
-
-.curados {
-    color: rgb(36, 161, 5);
+ ul > li > p.brand-logo {
+    font-size: 2em;
+    font-weight: 900;
+    background-color: #ee6e73;
+    color: white;
+    padding: 10px 20px;
 }

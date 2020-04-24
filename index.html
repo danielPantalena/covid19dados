@@ -1,56 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>covid19dados</title>
-    <link rel="stylesheet" href="css/app.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
-
-</head>
-<body>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Import material icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Import google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import internal css -->
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <!-- Header desktop -->
     <header>
-        <nav id="head">
-            <h1 id="covid19dados">Covid19 Dados</h1>
-    
-            <a class="links" href="img/mapa-brasil-casos-coronavirus21-03.jpeg">
-                        Mapa do Brasil</a>
-
-            <a class="links" href="https://www.worldometers.info/coronavirus/">
-                        Números Mundias</a>
-            
-            <a class="links" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
-                        Mapa do Mundo</a>
-
-            <a class="links" href="https://informationisbeautiful.net/visualizations/covid-19-coronavirus-infographic-datapack/">
-                        Dados</a>   
-        </nav>
+      <!-- Nav desktop -->
+      <nav>
+        <div class="nav-wrapper container">
+          <a href="#!" class="brand-logo">Covid19dados</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a target="_blank" href="https://covid.saude.gov.br/"
+                ><i class="material-icons">flag</i>Brasil
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.worldometers.info/coronavirus/#countries"
+                ><i class="material-icons">language</i>worldometers
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://informationisbeautiful.net/visualizations/covid-19-coronavirus-infographic-datapack/"
+                ><i class="material-icons">grid_on</i>information is beautiful
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
-    
+    <!-- Mobile menu -->
+    <ul class="sidenav" id="mobile-demo">
+      <li>
+        <p href="#" class="brand-logo">Covid19dados</p>
+      </li>
+      <li>
+        <a target="_blank" href="https://covid.saude.gov.br/"
+          ><i class="material-icons">flag</i>Brasil
+        </a>
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://www.worldometers.info/coronavirus/#countries"
+          ><i class="material-icons">language</i>worldometers
+        </a>
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://informationisbeautiful.net/visualizations/covid-19-coronavirus-infographic-datapack/"
+          ><i class="material-icons">grid_on</i>information is beautiful
+        </a>
+      </li>
+    </ul>
+
     <p id="update">atualizado em: 22/03/2020 as 11:00</p>
+    <div class="container">
+      <!-- Numbers -->
+      <div class="row">
+        <!-- Total -->
+        <div class="col s12 m4">
+          <div class="numbers-container z-depth-3 center-align black-text">
+            <i class="material-icons">confirmation_number</i>
+            <p class="numbers-text">
+              Casos
+            </p>
+            <p class="numbers black-text">566</p>
+          </div>
+        </div>
+        <!-- Recovery -->
+        <div class="col s12 m4">
+          <div class="numbers-container z-depth-3 center-align black-text">
+            <i class="material-icons">local_play</i>
+            <p class="numbers-text">
+              Recuperados
+            </p>
+            <p class="numbers black-text">566</p>
+          </div>
+        </div>
 
-    <p id="brasil"><img id="bandeira-brasil" src="img/brasilian_flag.png">Brasil</p>
+        <!-- Deaths -->
+        <div class="col s12 m4">
+          <div class="numbers-container z-depth-3 center-align black-text">
+            <i class="material-icons">local_hospital</i>
+            <p class="numbers-text">
+              Mortes
+            </p>
+            <p class="numbers black-text">566</p>
+          </div>
+        </div>
+      </div>
+      <!-- big-numbers -->
 
-    <p>Total de casos</p>
-    <div class="big-numbers"><p>1.546</p></div>
+      <div class="row">
+        <h2><img id="bandeira-brasil" src="img/brasilian_flag.png" />Brasil</h2>
 
-    <p>Mortes</p>
-    <div class="big-numbers"><p>25</p></div>
-
-    <p class="curados">Curados</p>
-    <div class="big-numbers"><p class="curados">2</p></div>
-    
-    <img class="image" src="img/covid19-21-03.png">
-    
-    <p>fonte: <a href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/21/
-        casos-de-coronavirus-no-brasil-em-21-de-marco.ghtml" >G1 globo.com</a></em></p>
-    
-    <img class="image" src="img/brasilprojection.png">
-    <p>fonte: <a href="https://www.who.int/">WHO.int</a></p>
-
-    <img class="image" src="img/delayepidemicpeak.jpg">
-    <p>Gráfico elaborado pelo cientista Drew Harris e adaptado pelo biólogo Carl Bergstrom 
-        mostra como medidas de prevenção podem retardar o contágio da Covid-19 e evitar o 
-        colapso do sistema de saúde — Foto: Carl Bergstrom e Esther Kim/CC BY 2.0<p>
-</body>
+    <!--Import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Import materialize.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Import canvas.js -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- Import internal js -->
+    <script src="js/app.js"></script>
+  </body>
 </html>
