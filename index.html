@@ -82,47 +82,69 @@
       </li>
     </ul>
 
-    <p id="update">atualizado em: 22/03/2020 as 11:00</p>
     <div class="container">
-      <!-- Numbers -->
+      <!-- Brasil -->
       <div class="row">
-        <!-- Total -->
-        <div class="col s12 m4">
-          <div class="numbers-container z-depth-3 center-align black-text">
-            <i class="material-icons">confirmation_number</i>
-            <p class="numbers-text">
-              Casos
-            </p>
-            <p class="numbers black-text">566</p>
-          </div>
+        <div class="row brasil">
+          <p>
+            <img
+              id="bandeira-brasil"
+              src="img/brasilian_flag.png"
+              width="20px"
+            />Brasil
+          </p>
         </div>
-        <!-- Recovery -->
-        <div class="col s12 m4">
-          <div class="numbers-container z-depth-3 center-align black-text">
-            <i class="material-icons">local_play</i>
-            <p class="numbers-text">
-              Recuperados
-            </p>
-            <p class="numbers black-text">566</p>
+        <!-- Numbers -->
+        <div class="row">
+          <!-- Total -->
+          <div class="col s12 m4">
+            <div
+              class="numbers-container z-depth-3 center-align black-text"
+              style="border-left: 5px solid #666666;"
+            >
+              <i class="material-icons" style="color: #666666;"
+                >confirmation_number</i
+              >
+              <span class="numbers-text" style="color: #666666;">
+                Casos
+              </span>
+              <p class="numbers" style="color: #666666;">566</p>
+            </div>
           </div>
-        </div>
-
-        <!-- Deaths -->
-        <div class="col s12 m4">
-          <div class="numbers-container z-depth-3 center-align black-text">
-            <i class="material-icons">local_hospital</i>
-            <p class="numbers-text">
-              Mortes
-            </p>
-            <p class="numbers black-text">566</p>
+          <!-- Recovery -->
+          <div class="col s12 m4">
+            <div
+              class="numbers-container z-depth-3 center-align black-text"
+              style="border-left: 5px solid #26a69a;"
+            >
+              <i class="material-icons" style="color: #26a69a;">local_play</i>
+              <span class="numbers-text" style="color: #26a69a;">
+                Recuperados
+              </span>
+              <p class="numbers" style="color: #26a69a;">566</p>
+            </div>
+          </div>
+          <!-- Deaths -->
+          <div class="col s12 m4">
+            <div
+              class="numbers-container z-depth-3 center-align black-text"
+              style="border-left: 5px solid #ee6e73;"
+            >
+              <i class="material-icons" style="color: #ee6e73;"
+                >local_hospital</i
+              >
+              <span class="numbers-text" style="color: #ee6e73;">
+                Mortes
+              </span>
+              <p class="numbers" style="color: #ee6e73;">566</p>
+            </div>
           </div>
         </div>
       </div>
-      <!-- big-numbers -->
-
-      <div class="row">
-        <h2><img id="bandeira-brasil" src="img/brasilian_flag.png" />Brasil</h2>
-
+    </div>
+    <div class="container">
+      <div id="chartContainer" class="chart"></div>
+    </div>
     <!--Import jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--Import materialize.js-->

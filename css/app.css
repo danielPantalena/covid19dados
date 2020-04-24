@@ -24,3 +24,25 @@ a.brand-logo {
     color: white;
     padding: 10px 20px;
 }
+
+.numbers-container {
+    margin: 20px 0 0 0;
+    border-radius: 5px;
+}
+
+.numbers {
+    font-size: 2em;
+}
+
+.brasil {
+    display: flex;
+    margin: 20px 20px 0px 20px;
+    font-size: 1.5em;
+    justify-content: center;
+}
+
+.chart {
+    height: 300px; 
+    width: 100%;
+    margin-bottom: 50px;
+}
