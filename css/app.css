@@ -4,10 +4,6 @@
   font-family: 'Baloo 2', cursive;
 }
 
-body {
-  /* background: linear-gradient(white, #bbbbbb); */
-}
-
 ul + div.container {
   padding: 0 0 1% 0;
   border-radius: 20px;
