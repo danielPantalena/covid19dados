@@ -38,6 +38,7 @@ p.numbers {
   font-size: 2.5em;
   align-self: flex-end;
   margin: 0;
+  font-weight: 900;
 }
 
 .numbers-text {
@@ -61,5 +62,5 @@ p.numbers {
 .chart-container {
   border-radius: 10px;
   padding: 2%;
-  margin: 1% 4.5%;
+  margin: 1% 4.5% 5%;
 }

@@ -61,7 +61,7 @@ window.onload = function () {
         type: 'line',
         name: 'Casos',
         color: '#666666',
-        showInLegend: true,
+        showInLegend: false,
         axisYIndex: 1,
         dataPoints: [
           { x: new Date(2020, 01, 26), y: 1 },
@@ -130,7 +130,7 @@ window.onload = function () {
         type: 'line',
         name: 'Recuperados',
         color: '#26a69a',
-        showInLegend: true,
+        showInLegend: false,
         axisYIndex: 1,
         dataPoints: [
           { x: new Date(2020, 02, 13), y: 1 },
@@ -183,7 +183,7 @@ window.onload = function () {
         type: 'line',
         name: 'Mortes',
         color: '#ee6e73',
-        showInLegend: true,
+        showInLegend: false,
         axisYIndex: 1,
         dataPoints: [
           { x: new Date(2020, 02, 17), y: 1 },
