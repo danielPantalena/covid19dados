@@ -2,37 +2,6 @@ $(document).ready(function () {
   $('.sidenav').sidenav();
 });
 
-// const data = {
-//     '26/fev': [1, null],
-//     '27/fev': [1, null],
-//     '28/fev': [1, null],
-//     '29/fev': [2, null],
-//     '01/mar': [2, null],
-//     '02/mar': [2, null],
-//     '03/mar': [2, null],
-//     '04/mar': [3, null],
-//     '05/mar': [8, null],
-//     '06/mar': [13, null],
-//     '07/mar': [25, null],
-//     '08/mar': [25, null],
-//     '09/mar': [25, null],
-//     '10/mar': [34, null],
-//     '11/mar': [52, null],
-//     '12/mar': [77, null],
-//     '13/mar': [98, null],
-//     '14/mar': [98, null],
-//     '15/mar': [98, null],
-//     '16/mar': [234, null],
-//     '17/mar': [291, 1],
-//     '18/mar': [428, 4],
-//     '19/mar': [621, 7],
-//     '20/mar': [978, 11],
-//     '21/mar': [1128, 18],
-//     '22/mar': [1546, 25],
-//     '23/mar': [1891, 34],
-// }
-
-// console.log(data['26/fev']);
 window.onload = function () {
   var chart = new CanvasJS.Chart('chartContainer', {
     title: {
@@ -125,6 +94,7 @@ window.onload = function () {
           { x: new Date(2020, 03, 24), y: 52995 },
           { x: new Date(2020, 03, 25), y: 59196 },
           { x: new Date(2020, 03, 26), y: 62859 },
+          { x: new Date(2020, 03, 27), y: 66501 },
         ],
       },
       {
@@ -178,7 +148,8 @@ window.onload = function () {
           { x: new Date(2020, 03, 23), y: 26573 },
           { x: new Date(2020, 03, 24), y: 27665 },
           { x: new Date(2020, 03, 25), y: 29160 },
-          { x: new Date(2020, 03, 26), y: 29160 + 992 },
+          { x: new Date(2020, 03, 26), y: 30152 },
+          { x: new Date(2020, 03, 27), y: 30152 + 990 },
         ],
       },
       {
@@ -229,6 +200,7 @@ window.onload = function () {
           { x: new Date(2020, 03, 24), y: 3670 },
           { x: new Date(2020, 03, 25), y: 4045 },
           { x: new Date(2020, 03, 26), y: 4271 },
+          { x: new Date(2020, 03, 27), y: 4543 },
         ],
       },
     ],
