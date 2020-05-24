@@ -2,8 +2,19 @@ $(document).ready(function () {
   $('.sidenav').sidenav();
 });
 
-window.onload = function () {
-  var chart = new CanvasJS.Chart('chartContainer', {
+async function fetchAPIData() {
+  const response = await fetch(
+    'https://api.covid19api.com/total/country/brazil',
+  );
+  const responseJSON = await response.json();
+  return responseJSON;
+}
+
+window.onload = async function () {
+  const response = await this.fetchAPIData();
+
+  console.log(response);
+  const chart = new CanvasJS.Chart('chartContainer', {
     title: {
       text: '',
     },
@@ -32,72 +43,9 @@ window.onload = function () {
         color: '#666666',
         showInLegend: false,
         axisYIndex: 1,
-        dataPoints: [
-          { x: new Date(2020, 01, 26), y: 1 },
-          { x: new Date(2020, 01, 27), y: 1 },
-          { x: new Date(2020, 01, 28), y: 1 },
-          { x: new Date(2020, 01, 29), y: 2 },
-          { x: new Date(2020, 02, 01), y: 2 },
-          { x: new Date(2020, 02, 02), y: 2 },
-          { x: new Date(2020, 02, 03), y: 3 },
-          { x: new Date(2020, 02, 04), y: 8 },
-          { x: new Date(2020, 02, 05), y: 13 },
-          { x: new Date(2020, 02, 06), y: 25 },
-          { x: new Date(2020, 02, 07), y: 25 },
-          { x: new Date(2020, 02, 08), y: 25 },
-          { x: new Date(2020, 02, 09), y: 25 },
-          { x: new Date(2020, 02, 10), y: 34 },
-          { x: new Date(2020, 02, 11), y: 52 },
-          { x: new Date(2020, 02, 12), y: 77 },
-          { x: new Date(2020, 02, 13), y: 151 },
-          { x: new Date(2020, 02, 14), y: 151 },
-          { x: new Date(2020, 02, 15), y: 200 },
-          { x: new Date(2020, 02, 16), y: 234 },
-          { x: new Date(2020, 02, 17), y: 346 },
-          { x: new Date(2020, 02, 18), y: 529 },
-          { x: new Date(2020, 02, 19), y: 640 },
-          { x: new Date(2020, 02, 20), y: 970 },
-          { x: new Date(2020, 02, 21), y: 1178 },
-          { x: new Date(2020, 02, 22), y: 1546 },
-          { x: new Date(2020, 02, 23), y: 1924 },
-          { x: new Date(2020, 02, 24), y: 2247 },
-          { x: new Date(2020, 02, 25), y: 2554 },
-          { x: new Date(2020, 02, 26), y: 2985 },
-          { x: new Date(2020, 02, 27), y: 3417 },
-          { x: new Date(2020, 02, 28), y: 3904 },
-          { x: new Date(2020, 02, 29), y: 4256 },
-          { x: new Date(2020, 02, 30), y: 4630 },
-          { x: new Date(2020, 02, 31), y: 5717 },
-          { x: new Date(2020, 03, 01), y: 6880 },
-          { x: new Date(2020, 03, 02), y: 8044 },
-          { x: new Date(2020, 03, 03), y: 9194 },
-          { x: new Date(2020, 03, 04), y: 10360 },
-          { x: new Date(2020, 03, 05), y: 11254 },
-          { x: new Date(2020, 03, 06), y: 12183 },
-          { x: new Date(2020, 03, 07), y: 14034 },
-          { x: new Date(2020, 03, 08), y: 16188 },
-          { x: new Date(2020, 03, 09), y: 18145 },
-          { x: new Date(2020, 03, 10), y: 19789 },
-          { x: new Date(2020, 03, 11), y: 20962 },
-          { x: new Date(2020, 03, 12), y: 22192 },
-          { x: new Date(2020, 03, 13), y: 23430 },
-          { x: new Date(2020, 03, 14), y: 25262 },
-          { x: new Date(2020, 03, 15), y: 28610 },
-          { x: new Date(2020, 03, 16), y: 30683 },
-          { x: new Date(2020, 03, 17), y: 33682 },
-          { x: new Date(2020, 03, 18), y: 36722 },
-          { x: new Date(2020, 03, 19), y: 38654 },
-          { x: new Date(2020, 03, 20), y: 40753 },
-          { x: new Date(2020, 03, 21), y: 43079 },
-          { x: new Date(2020, 03, 22), y: 47757 },
-          { x: new Date(2020, 03, 23), y: 49492 },
-          { x: new Date(2020, 03, 24), y: 52995 },
-          { x: new Date(2020, 03, 25), y: 59196 },
-          { x: new Date(2020, 03, 26), y: 62859 },
-          { x: new Date(2020, 03, 27), y: 66501 },
-          { x: new Date(2020, 03, 28), y: 72899 },
-          { x: new Date(2020, 03, 29), y: 79361 },
-        ],
+        dataPoints: response
+          .filter(res => res.Confirmed > 0)
+          .map(res => ({ x: new Date(res.Date), y: res.Confirmed })),
       },
       {
         type: 'line',
@@ -105,56 +53,9 @@ window.onload = function () {
         color: '#26a69a',
         showInLegend: false,
         axisYIndex: 1,
-        dataPoints: [
-          { x: new Date(2020, 02, 13), y: 1 },
-          { x: new Date(2020, 02, 14), y: 1 },
-          { x: new Date(2020, 02, 15), y: 2 },
-          { x: new Date(2020, 02, 16), y: 2 },
-          { x: new Date(2020, 02, 17), y: 2 },
-          { x: new Date(2020, 02, 18), y: 2 },
-          { x: new Date(2020, 02, 19), y: 2 },
-          { x: new Date(2020, 02, 20), y: 2 },
-          { x: new Date(2020, 02, 21), y: 2 },
-          { x: new Date(2020, 02, 22), y: 2 },
-          { x: new Date(2020, 02, 23), y: 2 },
-          { x: new Date(2020, 02, 24), y: 2 },
-          { x: new Date(2020, 02, 25), y: 2 },
-          { x: new Date(2020, 02, 26), y: 2 + 4 },
-          { x: new Date(2020, 02, 27), y: 2 + 4 },
-          { x: new Date(2020, 02, 28), y: 2 + 4 },
-          { x: new Date(2020, 02, 29), y: 2 + 4 },
-          { x: new Date(2020, 02, 30), y: 120 },
-          { x: new Date(2020, 02, 31), y: 127 },
-          { x: new Date(2020, 03, 01), y: 127 },
-          { x: new Date(2020, 03, 02), y: 127 },
-          { x: new Date(2020, 03, 03), y: 127 },
-          { x: new Date(2020, 03, 04), y: 127 },
-          { x: new Date(2020, 03, 05), y: 127 },
-          { x: new Date(2020, 03, 06), y: 127 },
-          { x: new Date(2020, 03, 07), y: 127 },
-          { x: new Date(2020, 03, 08), y: 127 },
-          { x: new Date(2020, 03, 09), y: 127 + 46 },
-          { x: new Date(2020, 03, 10), y: 173 },
-          { x: new Date(2020, 03, 11), y: 173 },
-          { x: new Date(2020, 03, 12), y: 173 },
-          { x: new Date(2020, 03, 13), y: 173 },
-          { x: new Date(2020, 03, 14), y: 14026 },
-          { x: new Date(2020, 03, 15), y: 14026 },
-          { x: new Date(2020, 03, 16), y: 14026 },
-          { x: new Date(2020, 03, 17), y: 14026 },
-          { x: new Date(2020, 03, 18), y: 14026 },
-          { x: new Date(2020, 03, 19), y: 22130 },
-          { x: new Date(2020, 03, 20), y: 22130 },
-          { x: new Date(2020, 03, 21), y: 24325 },
-          { x: new Date(2020, 03, 22), y: 25318 },
-          { x: new Date(2020, 03, 23), y: 26573 },
-          { x: new Date(2020, 03, 24), y: 27665 },
-          { x: new Date(2020, 03, 25), y: 29160 },
-          { x: new Date(2020, 03, 26), y: 30152 },
-          { x: new Date(2020, 03, 27), y: 31142 },
-          { x: new Date(2020, 03, 28), y: 32544 },
-          { x: new Date(2020, 03, 29), y: 34132 },
-        ],
+        dataPoints: response
+        .filter(res => res.Confirmed > 0)
+        .map(res => ({ x: new Date(res.Date), y: res.Recovered })),
       },
       {
         type: 'line',
@@ -162,56 +63,23 @@ window.onload = function () {
         color: '#ee6e73',
         showInLegend: false,
         axisYIndex: 1,
-        dataPoints: [
-          { x: new Date(2020, 02, 17), y: 1 },
-          { x: new Date(2020, 02, 18), y: 4 },
-          { x: new Date(2020, 02, 19), y: 7 },
-          { x: new Date(2020, 02, 20), y: 11 },
-          { x: new Date(2020, 02, 21), y: 18 },
-          { x: new Date(2020, 02, 22), y: 25 },
-          { x: new Date(2020, 02, 23), y: 34 },
-          { x: new Date(2020, 02, 24), y: 46 },
-          { x: new Date(2020, 02, 25), y: 59 },
-          { x: new Date(2020, 02, 26), y: 77 },
-          { x: new Date(2020, 02, 27), y: 92 },
-          { x: new Date(2020, 02, 28), y: 114 },
-          { x: new Date(2020, 02, 29), y: 136 },
-          { x: new Date(2020, 02, 30), y: 163 },
-          { x: new Date(2020, 02, 31), y: 201 },
-          { x: new Date(2020, 03, 01), y: 242 },
-          { x: new Date(2020, 03, 02), y: 324 },
-          { x: new Date(2020, 03, 03), y: 363 },
-          { x: new Date(2020, 03, 04), y: 445 },
-          { x: new Date(2020, 03, 05), y: 486 },
-          { x: new Date(2020, 03, 06), y: 564 },
-          { x: new Date(2020, 03, 07), y: 686 },
-          { x: new Date(2020, 03, 08), y: 820 },
-          { x: new Date(2020, 03, 09), y: 954 },
-          { x: new Date(2020, 03, 10), y: 1068 },
-          { x: new Date(2020, 03, 11), y: 1140 },
-          { x: new Date(2020, 03, 12), y: 1223 },
-          { x: new Date(2020, 03, 13), y: 1328 },
-          { x: new Date(2020, 03, 14), y: 1532 },
-          { x: new Date(2020, 03, 15), y: 1757 },
-          { x: new Date(2020, 03, 16), y: 1947 },
-          { x: new Date(2020, 03, 17), y: 2141 },
-          { x: new Date(2020, 03, 18), y: 2361 },
-          { x: new Date(2020, 03, 19), y: 2462 },
-          { x: new Date(2020, 03, 20), y: 2587 },
-          { x: new Date(2020, 03, 21), y: 2741 },
-          { x: new Date(2020, 03, 22), y: 2906 },
-          { x: new Date(2020, 03, 23), y: 3313 },
-          { x: new Date(2020, 03, 24), y: 3670 },
-          { x: new Date(2020, 03, 25), y: 4045 },
-          { x: new Date(2020, 03, 26), y: 4271 },
-          { x: new Date(2020, 03, 27), y: 4543 },
-          { x: new Date(2020, 03, 28), y: 5063 },
-          { x: new Date(2020, 03, 29), y: 5511 },
-        ],
+        dataPoints: response
+        .filter(res => res.Confirmed > 0)
+        .map(res => ({ x: new Date(res.Date), y: res.Deaths })),
       },
     ],
   });
   chart.render();
+
+  const casesNumber = document.getElementById('cases');
+  const recoveredNumber = document.getElementById('recovered');
+  const deathsNumber = document.getElementById('deaths');
+  const lastUpdate = document.getElementById('lastUpdate');
+
+  casesNumber.innerHTML = response[response.length-1].Confirmed.toLocaleString('pt-BR');
+  recoveredNumber.innerHTML = response[response.length-1].Recovered.toLocaleString('pt-BR');
+  deathsNumber.innerHTML = response[response.length-1].Deaths.toLocaleString('pt-BR');
+  lastUpdate.innerHTML = new Date(response[response.length-1].Date).toLocaleDateString('pt-BR');
 
   function toggleDataSeries(e) {
     if (typeof e.dataSeries.visible === 'undefined' || e.dataSeries.visible) {
