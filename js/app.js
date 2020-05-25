@@ -7,12 +7,13 @@ async function fetchAPIData() {
     'https://api.covid19api.com/total/country/brazil',
   );
   const responseJSON = await response.json();
+  document.querySelector('div.loading').style.display = await 'none';
+  document.querySelector('div.content').style.display = await 'block';
   return responseJSON;
 }
 
 window.onload = async function () {
   const response = await this.fetchAPIData();
-
   console.log(response);
   const chart = new CanvasJS.Chart('chartContainer', {
     title: {
@@ -54,8 +55,8 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-        .filter(res => res.Confirmed > 0)
-        .map(res => ({ x: new Date(res.Date), y: res.Recovered })),
+          .filter(res => res.Confirmed > 0)
+          .map(res => ({ x: new Date(res.Date), y: res.Recovered })),
       },
       {
         type: 'line',
@@ -64,8 +65,8 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-        .filter(res => res.Confirmed > 0)
-        .map(res => ({ x: new Date(res.Date), y: res.Deaths })),
+          .filter(res => res.Confirmed > 0)
+          .map(res => ({ x: new Date(res.Date), y: res.Deaths })),
       },
     ],
   });
@@ -76,10 +77,18 @@ window.onload = async function () {
   const deathsNumber = document.getElementById('deaths');
   const lastUpdate = document.getElementById('lastUpdate');
 
-  casesNumber.innerHTML = response[response.length-1].Confirmed.toLocaleString('pt-BR');
-  recoveredNumber.innerHTML = response[response.length-1].Recovered.toLocaleString('pt-BR');
-  deathsNumber.innerHTML = response[response.length-1].Deaths.toLocaleString('pt-BR');
-  lastUpdate.innerHTML = new Date(response[response.length-1].Date).toLocaleDateString('pt-BR');
+  casesNumber.innerHTML = response[
+    response.length - 1
+  ].Confirmed.toLocaleString('pt-BR');
+  recoveredNumber.innerHTML = response[
+    response.length - 1
+  ].Recovered.toLocaleString('pt-BR');
+  deathsNumber.innerHTML = response[response.length - 1].Deaths.toLocaleString(
+    'pt-BR',
+  );
+  lastUpdate.innerHTML = new Date(
+    response[response.length - 1].Date,
+  ).toLocaleDateString('pt-BR');
 
   function toggleDataSeries(e) {
     if (typeof e.dataSeries.visible === 'undefined' || e.dataSeries.visible) {

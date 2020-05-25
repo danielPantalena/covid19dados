@@ -33,7 +33,18 @@ ul > li > p.brand-logo {
   padding: 10px 10px;
 }
 
-.numbers-container {
+div.content {
+  display: none;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.number-container {
   display: flex;
   flex-flow: column-reverse;
   padding: 0% 10% 2% 10%;
