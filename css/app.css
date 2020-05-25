@@ -34,7 +34,8 @@ ul > li > p.brand-logo {
 }
 
 div.content {
-  display: none;
+  opacity: 0;
+  transition: all 1500ms;
 }
 
 .loading {
@@ -42,6 +43,8 @@ div.content {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .number-container {
@@ -95,4 +98,6 @@ div.container div.row {
 footer {
   margin-top: 20px;
   margin-bottom: 20px;
+  opacity: 0;
+  transition: all 1500ms;
 }

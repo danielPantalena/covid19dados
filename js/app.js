@@ -8,7 +8,8 @@ async function fetchAPIData() {
   );
   const responseJSON = await response.json();
   document.querySelector('div.loading').style.display = await 'none';
-  document.querySelector('div.content').style.display = await 'block';
+  document.querySelector('div.content').style.opacity = await '1';
+  document.querySelector('footer').style.opacity = await '1';
   return responseJSON;
 }
 
@@ -45,8 +46,18 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter(res => res.Confirmed > 0)
+          .filter(res => res.Confirmed > 1000)
           .map(res => ({ x: new Date(res.Date), y: res.Confirmed })),
+      },
+      {
+        type: 'line',
+        name: 'Ativos',
+        color: 'black',
+        showInLegend: false,
+        axisYIndex: 1,
+        dataPoints: response
+          .filter(res => res.Confirmed > 1000)
+          .map(res => ({ x: new Date(res.Date), y: res.Active })),
       },
       {
         type: 'line',
@@ -55,7 +66,7 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter(res => res.Confirmed > 0)
+          .filter(res => res.Confirmed > 1000)
           .map(res => ({ x: new Date(res.Date), y: res.Recovered })),
       },
       {
@@ -65,7 +76,7 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter(res => res.Confirmed > 0)
+          .filter(res => res.Confirmed > 1000)
           .map(res => ({ x: new Date(res.Date), y: res.Deaths })),
       },
     ],
