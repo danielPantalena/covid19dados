@@ -42,7 +42,7 @@ window.onload = async function () {
       {
         type: 'line',
         name: 'Casos',
-        color: '#666666',
+        color: '#aaaaaa',
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
