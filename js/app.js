@@ -7,9 +7,9 @@ async function fetchAPIData() {
     'https://api.covid19api.com/total/country/brazil',
   );
   const responseJSON = await response.json();
-  document.querySelector('div.loading').style.display = await 'none';
-  document.querySelector('div.content').style.opacity = await '1';
-  document.querySelector('footer').style.opacity = await '1';
+  document.querySelector('div.loading').style.display = 'none';
+  document.querySelector('div.content').style.opacity = '1';
+  document.querySelector('footer').style.opacity = '1';
   return responseJSON;
 }
 
