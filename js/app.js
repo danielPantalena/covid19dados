@@ -3,9 +3,7 @@ $(document).ready(function () {
 });
 
 async function fetchAPIData() {
-  const response = await fetch(
-    'https://api.covid19api.com/total/country/brazil',
-  );
+  const response = await fetch('https://api.covid19api.com/total/country/brazil');
   const responseJSON = await response.json();
   document.querySelector('div.loading').style.display = 'none';
   document.querySelector('div.content').style.opacity = '1';
@@ -15,7 +13,7 @@ async function fetchAPIData() {
 
 window.onload = async function () {
   const response = await this.fetchAPIData();
-  console.log(response);
+  console.log(response[101]);
   const chart = new CanvasJS.Chart('chartContainer', {
     title: {
       text: '',
@@ -46,8 +44,8 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter(res => res.Confirmed > 1000)
-          .map(res => ({ x: new Date(res.Date), y: res.Confirmed })),
+          .filter((res) => res.Confirmed > 1000 && res.Date !== '2020-06-05T00:00:00Z')
+          .map((res) => ({ x: new Date(res.Date), y: res.Confirmed })),
       },
       {
         type: 'line',
@@ -56,8 +54,8 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter(res => res.Confirmed > 1000)
-          .map(res => ({ x: new Date(res.Date), y: res.Active })),
+          .filter((res) => res.Confirmed > 1000 && res.Date !== '2020-06-05T00:00:00Z')
+          .map((res) => ({ x: new Date(res.Date), y: res.Active })),
       },
       {
         type: 'line',
@@ -66,8 +64,8 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter(res => res.Confirmed > 1000)
-          .map(res => ({ x: new Date(res.Date), y: res.Recovered })),
+          .filter((res) => res.Confirmed > 1000 && res.Date !== '2020-06-05T00:00:00Z')
+          .map((res) => ({ x: new Date(res.Date), y: res.Recovered })),
       },
       {
         type: 'line',
@@ -76,8 +74,8 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter(res => res.Confirmed > 1000)
-          .map(res => ({ x: new Date(res.Date), y: res.Deaths })),
+          .filter((res) => res.Confirmed > 1000)
+          .map((res) => ({ x: new Date(res.Date), y: res.Deaths })),
       },
     ],
   });
@@ -88,18 +86,10 @@ window.onload = async function () {
   const deathsNumber = document.getElementById('deaths');
   const lastUpdate = document.getElementById('lastUpdate');
 
-  casesNumber.innerHTML = response[
-    response.length - 1
-  ].Confirmed.toLocaleString('pt-BR');
-  recoveredNumber.innerHTML = response[
-    response.length - 1
-  ].Recovered.toLocaleString('pt-BR');
-  deathsNumber.innerHTML = response[response.length - 1].Deaths.toLocaleString(
-    'pt-BR',
-  );
-  lastUpdate.innerHTML = new Date(
-    response[response.length - 1].Date,
-  ).toLocaleDateString('pt-BR');
+  casesNumber.innerHTML = response[response.length - 1].Confirmed.toLocaleString('pt-BR');
+  recoveredNumber.innerHTML = response[response.length - 1].Recovered.toLocaleString('pt-BR');
+  deathsNumber.innerHTML = response[response.length - 1].Deaths.toLocaleString('pt-BR');
+  lastUpdate.innerHTML = new Date(response[response.length - 1].Date).toLocaleDateString('pt-BR');
 
   function toggleDataSeries(e) {
     if (typeof e.dataSeries.visible === 'undefined' || e.dataSeries.visible) {
