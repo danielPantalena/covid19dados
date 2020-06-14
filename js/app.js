@@ -44,7 +44,7 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter((res) => res.Confirmed > 1000 && res.Date !== '2020-06-05T00:00:00Z')
+          .filter((res) => res.Confirmed > 10000 && res.Date !== '2020-06-05T00:00:00Z')
           .map((res) => ({ x: new Date(res.Date), y: res.Confirmed })),
       },
       {
@@ -54,8 +54,11 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter((res) => res.Confirmed > 1000 && res.Date !== '2020-06-05T00:00:00Z')
-          .map((res) => ({ x: new Date(res.Date), y: res.Active })),
+          .filter((res) => res.Confirmed > 10000 && res.Date !== '2020-06-05T00:00:00Z')
+          .map((res) => {
+            if (res.Confirmed > 692000) return { x: new Date(res.Date), y: res.Recovered };
+            return { x: new Date(res.Date), y: res.Active };
+          }),
       },
       {
         type: 'line',
@@ -64,8 +67,11 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter((res) => res.Confirmed > 1000 && res.Date !== '2020-06-05T00:00:00Z')
-          .map((res) => ({ x: new Date(res.Date), y: res.Recovered })),
+          .filter((res) => res.Confirmed > 10000 && res.Date !== '2020-06-05T00:00:00Z')
+          .map((res) => {
+            if (res.Confirmed > 692000) return { x: new Date(res.Date), y: res.Active };
+            return { x: new Date(res.Date), y: res.Recovered };
+          }),
       },
       {
         type: 'line',
@@ -74,7 +80,7 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter((res) => res.Confirmed > 1000)
+          .filter((res) => res.Confirmed > 10000)
           .map((res) => ({ x: new Date(res.Date), y: res.Deaths })),
       },
     ],
