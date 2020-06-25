@@ -54,7 +54,12 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter((res) => res.Confirmed > 10000 && res.Date !== '2020-06-05T00:00:00Z')
+          .filter(
+            (res) =>
+              res.Confirmed > 10000 &&
+              res.Date !== '2020-06-05T00:00:00Z' &&
+              res.Date !== '2020-06-24T00:00:00Z',
+          )
           .map((res) => {
             if (res.Confirmed > 692000) return { x: new Date(res.Date), y: res.Recovered };
             return { x: new Date(res.Date), y: res.Active };
@@ -67,7 +72,13 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter((res) => res.Confirmed > 10000 && res.Date !== '2020-06-05T00:00:00Z')
+          .filter(
+            (res) =>
+              res.Confirmed > 10000 &&
+              res.Date !== '2020-06-05T00:00:00Z' &&
+              res.Date !== '2020-06-24T00:00:00Z' &&
+              res.Date !== '2020-06-20T00:00:00Z',
+          )
           .map((res) => {
             if (res.Confirmed > 692000) return { x: new Date(res.Date), y: res.Active };
             return { x: new Date(res.Date), y: res.Recovered };
@@ -80,7 +91,7 @@ window.onload = async function () {
         showInLegend: false,
         axisYIndex: 1,
         dataPoints: response
-          .filter((res) => res.Confirmed > 10000)
+          .filter((res) => res.Confirmed > 10000 && res.Date !== '2020-06-24T00:00:00Z')
           .map((res) => ({ x: new Date(res.Date), y: res.Deaths })),
       },
     ],
@@ -92,10 +103,10 @@ window.onload = async function () {
   const deathsNumber = document.getElementById('deaths');
   const lastUpdate = document.getElementById('lastUpdate');
 
-  casesNumber.innerHTML = response[response.length - 1].Confirmed.toLocaleString('pt-BR');
-  recoveredNumber.innerHTML = response[response.length - 1].Recovered.toLocaleString('pt-BR');
-  deathsNumber.innerHTML = response[response.length - 1].Deaths.toLocaleString('pt-BR');
-  lastUpdate.innerHTML = new Date(response[response.length - 1].Date).toLocaleDateString('pt-BR');
+  casesNumber.innerHTML = response[response.length - 2].Confirmed.toLocaleString('pt-BR');
+  recoveredNumber.innerHTML = response[response.length - 2].Active.toLocaleString('pt-BR');
+  deathsNumber.innerHTML = response[response.length - 2].Deaths.toLocaleString('pt-BR');
+  lastUpdate.innerHTML = new Date(response[response.length - 2].Date).toLocaleDateString('pt-BR');
 
   function toggleDataSeries(e) {
     if (typeof e.dataSeries.visible === 'undefined' || e.dataSeries.visible) {
